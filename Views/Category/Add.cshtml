@@ -1,0 +1,12 @@
+﻿@model DeviceManagementApplication.Models.Category
+
+<h2>Add Category</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group mb-2">
+        <label asp-for="name">Category Name</label>
+        <input asp-for="name" class="form-control" placeholder="Enter Category Name"/>
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

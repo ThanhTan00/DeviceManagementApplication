@@ -1,0 +1,37 @@
+﻿@model DeviceManagementApplication.Models.Device
+
+<h1>Edit Device</h1>
+
+<form asp-action="Edit" method="post">
+    <div class ="form-group">
+        <label>Name</label>
+        <input asp-for="name" class="form-control" />
+        <span asp-validation-for="name"></span>
+    </div>
+    <div class="form-group">
+        <label>Code</label>
+        <input asp-for="code" class="form-control" />
+        <span asp-validation-for="code"></span>
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select asp-for="categoryId" class="form-control">
+            <option value="">Select Category</option>
+            @foreach (var category in (List<Category>)ViewBag.Categories)
+            {
+                <option value="@category.id">@category.name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <input asp-for="status" class="form-control" />
+        <span asp-validation-for="status"></span>
+    </div>
+    <div class="form-group">
+        <label>Date Of Entry</label>
+        <input asp-for="dateOfEntry" class="form-control" />
+        <span asp-validation-for="dateOfEntry"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>

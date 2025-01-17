@@ -1,0 +1,13 @@
+﻿@model DeviceManagementApplication.Models.Category
+
+<h1>Edit Device</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group mb-2">
+        <label>Name</label>
+        <input asp-for="name" class="form-control" />
+        <span asp-validation-for="name"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>

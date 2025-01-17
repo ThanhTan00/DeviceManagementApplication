@@ -1,0 +1,23 @@
+﻿@model DeviceManagementApplication.Models.User
+
+<h1>Edit Device</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group mb-2">
+        <label>Full Name</label>
+        <input asp-for="fullName" class="form-control"/>
+        <span asp-validation-for="fullName"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label>Email</label>
+        <input asp-for="email" class="form-control" />
+        <span asp-validation-for="email"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label>Phone Number</label>
+        <input asp-for="phoneNumber" class="form-control" />
+        <span asp-validation-for="phoneNumber"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>

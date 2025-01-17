@@ -1,0 +1,42 @@
+﻿@model DeviceManagementApplication.Models.Device
+
+<h2>Add Device</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="name"></label>
+        <input asp-for="name" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="code"></label>
+        <input asp-for="code" class="form-control" />
+        <span asp-validation-for="code" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="categoryId"></label>
+        <select asp-for="categoryId" class="form-control">
+            <option value="">Select Category</option>
+            @foreach (var category in (List<Category>)ViewBag.Categories)
+            {
+                <option value="@category.id">@category.name</option>
+            }
+        </select>
+        <span asp-validation-for="categoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="status"></label>
+        <select asp-for="status" class="form-control">
+            <option value="In Use">In Use</option>
+            <option value="Broken">Broken</option>
+            <option value="Under Maintenance">Under Maintenance</option>
+        </select>
+        <span asp-validation-for="status" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="dateOfEntry"></label>
+        <input asp-for="dateOfEntry" type="date" class="form-control" />
+        <span asp-validation-for="dateOfEntry" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
